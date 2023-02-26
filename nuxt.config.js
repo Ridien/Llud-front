@@ -2,6 +2,7 @@ import colors from 'vuetify/es5/util/colors'
 
 export default {
   target:'static',
+  ssr:false,
   server: {
     port: 8000, // default: 3000
     // host: '0.0.0.0'
@@ -56,7 +57,7 @@ export default {
         keys: [
           {
             key: 'API_URL',
-            default: 'https://llud-backend.onrender.com/',
+            default: 'https://llud-backend.onrender.com',
             name: 'API_URL'
           },
         ]
@@ -73,7 +74,7 @@ export default {
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {
     // Workaround to avoid enforcing hard-coded localhost:3000: https://github.com/nuxt-community/axios-module/issues/308
-    baseURL: 'https://llud-backend.onrender.com/',
+    baseURL: 'https://llud-backend.onrender.com',
   },
 
   // Vuetify module configuration: https://go.nuxtjs.dev/config-vuetify
