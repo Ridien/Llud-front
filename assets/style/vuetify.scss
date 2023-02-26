@@ -1,0 +1,11 @@
+$secondary:  #6E7E56;
+
+.v-text-field__slot label{
+    font-size: 16px !important;
+}
+.v-text-field__slot {
+    font-size: 16px !important;
+    input {
+        color: $secondary !important
+    }
+}

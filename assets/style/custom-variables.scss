@@ -1,0 +1,173 @@
+
+$brand-transparent:         transparent;
+
+$brand-risk-imperial:   #214b6d;
+$brand-risk-serpent:    #4F8CE9;
+$brand-risk-pistache:   #9DCB7D;
+$brand-risk-new-green:  #00BA47;
+$brand-risk-flex:       #DFE183;
+$brand-risk-flex-plus:  #DDC800;
+$brand-risk-light-tang: #F7DF00;
+$brand-risk-tangerine:  #fdb713;
+$brand-risk-sandy:      #f19f54;
+$brand-risk-error:      #ff7f63;
+$brand-risk-turquoise:  #14ACCC;
+$brand-risk-jade:       #02BA7F;
+$mova-green:            #02AE99 !default;
+
+
+$risk-colors: ();
+// stylelint-disable-next-line scss/dollar-variable-default
+$risk-colors: map-merge(
+  (
+    "risk-imperial":   $brand-risk-imperial,
+    "risk-serpent":    $brand-risk-serpent,
+    "risk-pistache":   $brand-risk-pistache,
+    "risk-new-green":  $brand-risk-new-green,
+    "risk-flex":       $brand-risk-flex,
+    "risk-flex-plus":  $brand-risk-flex-plus,
+    "risk-tangerine":  $brand-risk-tangerine,
+    "risk-light-tang": $brand-risk-light-tang,
+    "risk-sandy":      $brand-risk-sandy,
+    "risk-error":      $brand-risk-error,
+    "risk-turquoise":  $brand-risk-turquoise,
+    "risk-jade":       $brand-risk-jade,
+    "risk-mova-green": $mova-green,
+  ),
+  $risk-colors
+);
+
+$primary:         #2B3E50;
+$blue:            #375788;
+$success:         #00BA47;
+$success-light:   #00ff61;
+$success-lighter: #00ff9e;
+$info:            #4b78ba;
+$info-light:      #67A4ff;
+$black:           #000000;
+$gray-alternative:#c4c4c4;
+$gray:            #a8a8a8;
+$gray-dark:       #666666;
+$gray-light:      #e8ecf1;
+$gray-lighter:    #f1f1f1;
+$white:           #ffffff;
+$strong-orange:   #FF4621;
+$dark-grey : #424242;
+
+
+$theme-colors: (
+  "blue":              $blue,
+  "success-light":     $success-light,
+  "success-lighter":   $success-lighter,
+  "info-light":        $info-light,
+  "black":             $black,
+  "gray-alternative":  $gray-alternative,
+  "gray":              $gray,
+  "gray-light":        $gray-light,
+  "gray-lighter":      $gray-lighter,
+  "gray-dark":         $gray-dark,
+  "white":             $white,
+  "strong-orange":     $strong-orange,
+  "risk-pistache":     $brand-risk-pistache,
+  "dark-grey":     $dark-grey,
+);
+
+
+//== Media queries breakpoints
+//
+//## Define the breakpoints at which your layout will change, adapting to different screen sizes.
+
+$screen-sm-min: 960px;
+$screen-md-min: 1200px;
+$screen-lg-min: 1650px;
+
+$screen-xs-max: $screen-sm-min - 1;
+$screen-sm-max: $screen-md-min - 1;
+$screen-md-max: $screen-lg-min - 1;
+
+// Grid breakpoints
+//
+// Define the minimum dimensions at which your layout will change,
+// adapting to different screen sizes, for use in media queries.
+
+$grid-breakpoints: (
+  xs: 0,
+  sm: $screen-sm-min,
+  md: $screen-md-min,
+  lg: $screen-lg-min,
+  xl: 1920px
+);
+
+
+// Fonts
+//
+// Font, line-height, and color for body text, headings, and more.
+
+// Font family
+$font-family-sans-serif:  'Montserrat';
+
+// Font size
+$big-title:               get-rem(48px);
+$font-size-small:         get-rem(15px);
+
+$font-size-small-xs:      get-rem(14px);
+
+
+// Buttons
+//
+// For each of Bootstrap's buttons, define text, background, and border color.
+
+$btn-padding-y:               get-rem(15px);
+$btn-padding-x:               get-rem(7px);
+$btn-line-height:             get-rem(20px);
+
+$btn-padding-y-sm:            get-rem(7.5px);
+$btn-padding-x-sm:            get-rem(5px);
+$btn-line-height-sm:          get-rem(15px);
+
+$btn-padding-y-lg:            get-rem(15px);
+$btn-padding-x-lg:            get-rem(7px);
+$btn-line-height-lg:          get-rem(20px);
+
+$btn-font-weight:             700;
+
+// Allows for customizing button radius independently from global border radius
+$btn-border-radius:           get-rem(6px);
+$btn-border-radius-lg:        get-rem(6px);
+$btn-border-radius-sm:        get-rem(6px);
+
+// customização do espaçamento do bootstrap
+$spacers: (
+    11: get-rem(5px),
+    12: get-rem(10px),
+    13: get-rem(15px),
+    14: get-rem(20px),
+    15: get-rem(30px),
+    16: get-rem(40px),
+    17: get-rem(50px),
+    18: get-rem(80px)
+);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
