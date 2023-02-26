@@ -8,6 +8,9 @@ export default function ({
     route,
     app
 }) {
+    if(!process.client){
+        return
+    }
     let token = null
     let role = null
     let routeWhiteList = ['index', 'register']
