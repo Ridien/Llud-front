@@ -5,7 +5,7 @@
                 <v-col cols="4">
                     <v-row no-gutters>
                         <v-img src="\img\logo.svg" max-height="48px" max-width="48px" contain></v-img>
-                        <h1 class="primary--text ma-0 pa-0 mx-2 pt-2">Llud</h1>
+                        <h1 v-if="$vuetify.breakpoint.mdAndUp" class="primary--text ma-0 pa-0 mx-2 pt-2">Llud</h1>
                     </v-row>
                 </v-col>
                 <v-col cols="4"></v-col>
@@ -19,7 +19,7 @@
         <v-app class="teaGreen">
             <v-container fluid>
                 <v-row no-gutters justify="center">
-                    <v-col cols="9" class="white elevation-5 pa-4">
+                    <v-col cols="11" md="9" class="white elevation-5 pa-4">
                         <v-row no-gutters align="center">
                             <v-btn @click="$router.push({
                                 name: 'user'

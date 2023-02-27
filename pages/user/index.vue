@@ -1,29 +1,31 @@
 <template>
     <div class="teaGreen main-container">
-        <v-app-bar color="white">
+        <v-app-bar :style="'width:100%'" color="white">
             <v-row no-gutters align="center">
-                <v-col cols="4">
+                <v-col cols="2" md="4">
                     <v-row no-gutters>
                         <v-img src="\img\logo.svg" max-height="48px" max-width="48px" contain></v-img>
-                        <h1 class="primary--text ma-0 pa-0 mx-2 pt-2">Llud</h1>
+                        <h1 v-if="$vuetify.breakpoint.mdAndUp" class="primary--text ma-0 pa-0 mx-2 pt-2">Llud</h1>
                     </v-row>
                 </v-col>
-                <v-col cols="4">
+                <v-col cols="8" md="4">
                     <v-text-field v-model="nameFilter" append-icon="search" class="rounded-pill" hide-details outlined dense
                         label="Pesquisar"></v-text-field>
                 </v-col>
-                <v-col cols="4">
+                <v-col cols="2" md="4">
                     <v-row justify="end" class="px-5">
                         <a class="text-h5" @click="$router.push('/')">Sair</a>
                     </v-row>
                 </v-col>
             </v-row>
         </v-app-bar>
-        <v-main>
+        <v-main :style="{
+            'width':$vuetify.breakpoint.mdAndUp?'100%':'93%'
+        }">
             <v-container class="ma-0 pa-0" fluid fill-height>
                 <v-row no-gutters class="ma-0 pa-0">
                     <v-col cols="auto">
-                        <v-navigation-drawer v-if="isLoaded" permanent clipped v-model="drawer" :mini-variant.sync="mini">
+                        <v-navigation-drawer permanent absolute v-if="isLoaded" clipped v-model="drawer" :mini-variant.sync="mini">
                             <v-list-item class="px-4">
                                 <v-row v-if="mini" justify="center" align="center">
                                     <v-icon class="primary--text">mdi-menu</v-icon>
@@ -40,7 +42,7 @@
 
                             <v-list dense>
 
-                                <v-list-item-group v-model="selectedBoard" color="primary">
+                                <v-list-item-group v-model="selectedBoard" mandatory color="primary">
                                     <v-list-item :value="item.id" v-for="item, idx in userBoards" :key="idx" link>
                                         <v-list-item-icon>
                                             <v-icon>mdi-castle</v-icon>
@@ -58,9 +60,12 @@
                     <v-col>
                         <v-app>
                             <v-row no-gutters class="ma-0 pa-0 teaGreen">
-                                <v-col>
-                                    <v-row no-gutters justify="center" class="my-6 sheet-y">
-                                        <v-col class="white elevation-3 d-flex flex-column" cols="9">
+                                <v-col class="pl-2 pl-md-0">
+                                    <v-row no-gutters justify="center" class="my-md-6 sheet-y pl-12 pl-md-0">
+                                        <v-col :class="{
+                                            'teaGreen':!$vuetify.breakpoint.mdAndUp,
+                                            'white':$vuetify.breakpoint.mdAndUp
+                                        }" class=" elevation-3 d-flex flex-column" cols="12" md="9">
                                             <v-row no-gutters class="mt-4 mx-4 nogrow">
                                                 <h2 class="text-h5 font-weight-bold my-0 py-0 primary--text nogrow">
                                                     Artigos
@@ -172,7 +177,7 @@ export default {
 
 <style scoped>
 .sheet-y {
-    min-height: 90vh;
+    min-height: 100vh;
 }
 
 .main-container {
