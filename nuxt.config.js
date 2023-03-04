@@ -2,7 +2,7 @@ import colors from 'vuetify/es5/util/colors'
 
 export default {
   server: {
-    port: 3000, // default: 3000
+    port: 8000, // default: 3000
     // host: '0.0.0.0'
   },
   // Global page headers: https://go.nuxtjs.dev/config-head
@@ -56,7 +56,7 @@ export default {
         keys: [
           {
             key: 'API_URL',
-            default: 'https://llud-backend.onrender.com',
+            default: 'http://localhost:3000',
             name: 'API_URL'
           },
         ]
@@ -88,7 +88,7 @@ export default {
           accent: '#7B6C9D',
           secondary: "#6E7E56",
           smokeGray: "#F5F5F5",
-          teaGreen: "#C3D6B4",
+          teaGreen: "#d3e1c8",
           info: colors.teal.lighten1,
           warning: colors.amber.base,
           error: colors.deepOrange.accent4,

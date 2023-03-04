@@ -75,15 +75,15 @@
                                                 <v-divider></v-divider>
                                             </v-row>
                                             <v-row no-gutters class="stretch nogrow">
-                                                <v-col class="d-flex pa-3" cols="12" md="3" v-for="card in getPageItems"
+                                                <v-col class="d-flex pa-6" cols="12" md="3" xl="2" v-for="card in getPageItems"
                                                     :key="card.id">
                                                     <v-card class="pa-3 pb-8 elevation-5">
                                                         <v-row no-gutters justify='center' class="py-2">
-                                                            <v-img height="260px" contain class="pa-5"
+                                                            <v-img height="160px" contain class="pa-5"
                                                                 :src="card.cover || '/img/default.png'"></v-img>
                                                         </v-row>
                                                         <v-row no-gutters>
-                                                            <p class="px-2 primary--text font-weight-bold body-1">{{
+                                                            <p class="px-2 primary--text font-weight-bold body-2">{{
                                                                 card.name }}</p>
                                                         </v-row>
                                                         <v-row class='view-btn' justify="end" align="end" no-gutters>
