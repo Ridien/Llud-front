@@ -56,7 +56,7 @@ export default {
         keys: [
           {
             key: 'API_URL',
-            default: 'http://localhost:3000',
+            default: 'https://llud-backend.onrender.com',
             name: 'API_URL'
           },
         ]
