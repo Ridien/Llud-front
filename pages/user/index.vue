@@ -79,8 +79,15 @@
                                                     :key="card.id">
                                                     <v-card class="pa-3 pb-8 elevation-5">
                                                         <v-row no-gutters justify='center' class="py-2">
-                                                            <v-img height="160px" contain class="pa-5"
-                                                                :src="card.cover || '/img/default.png'"></v-img>
+                                                            <v-img height="160px" v-if="!!imgList[card.cover]" contain class="pa-5"
+                                                                :src="imgList[card.cover]"></v-img>
+                                                            <v-img height="160px" v-if="!imgList[card.cover]" contain class="pa-5"
+                                                                :src="'/img/default.png'"></v-img>
+                                                            <div style="display:none">
+                                                                {{
+                                                                    getImgByUrl(card.cover)
+                                                                }} 
+                                                            </div>
                                                         </v-row>
                                                         <v-row no-gutters>
                                                             <p class="px-2 primary--text font-weight-bold body-2">{{
@@ -126,6 +133,10 @@ export default {
                 { title: 'My Account', icon: 'mdi-account' },
                 { title: 'Users', icon: 'mdi-account-group-outline' },
             ],
+            imgList: {
+
+            },
+            loadUrl: [],
             mini: true,
             userBoards: [],
             selectedBoard: '',
@@ -162,6 +173,19 @@ export default {
     },
     },
     methods: {
+        async getImgByUrl(url) {
+            if(!url || this.loadUrl.includes(url)){
+                return
+            }
+            this.loadUrl.push(url)
+            let data = await this.$axios.get('user/img', {
+                params: {
+                    img_url: url
+                }
+            })
+            this.$set(this.imgList, url, data.data)
+            return true
+        },
         async searchCards() {
             let { data: userCards } = await this.$axios.get('/user/board/' + this.selectedBoard + '/cards')
             this.cardsList = userCards

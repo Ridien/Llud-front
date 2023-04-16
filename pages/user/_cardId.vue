@@ -30,8 +30,13 @@
                         </v-row>
                         <v-row no-gutters justify="center" class="teaGreenTransparent elevation-4">
                             <v-col v-if="cover && cover.scaled" cols="10">
-                                <v-img contain max-height="500" :src="cover.scaled.slice(-1)[0].url">
+                                <v-img contain max-height="500" v-if="!!imgList[cover.scaled.slice(-1)[0].url]" :src="imgList[cover.scaled.slice(-1)[0].url]">
                                 </v-img>
+                                 <div style="display:none">
+                                    {{
+                                        getImgByUrl(cover.scaled.slice(-1)[0].url)
+                                    }} 
+                                </div>
                             </v-col>
                         </v-row>
                         <v-row no-gutters justify="start">
@@ -72,6 +77,8 @@ export default {
             cardObject: {},
             name: "",
             cover: null,
+            imgList: {},
+            loadUrl: []
         };
     },
     async mounted() {
@@ -89,6 +96,21 @@ export default {
             console.log(error)
         }
     },
+    methods: {
+        async getImgByUrl(url) {
+            if(!url || this.loadUrl.includes(url)){
+                return
+            }
+            this.loadUrl.push(url)
+            let data = await this.$axios.get('user/img', {
+                params: {
+                    img_url: url
+                }
+            })
+            this.$set(this.imgList, url, data.data)
+            return true
+        },
+    }
 };
 </script>
     
